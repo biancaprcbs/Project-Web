@@ -1,0 +1,48 @@
+<div id="container">
+<div id="header">
+            <div class="titulo"> Bem-vindo! </div>
+            <div class="subtitulo">Essas são suas informações:</div>
+            <br>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <input type="hidden" name="id" value="{{user._id}}">
+                <h5 class="card-title">{{user.nomeCompleto}}</h5>
+                <h6 class="card-title">{{user.email}}</h6>
+                <h6 class="card-title">{{user.celular}}</h6>
+                <p class="card-text">
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Informações</h5>
+                <p class="card-text">{{user.grupo}}</p>
+                <p class="card-text">Vacina: {{user.tipoVacina}}</p>
+                <p class="card-text">Dose 1: {{user.dose1}}</p>
+                <p class="card-text">Data dose 1: {{user.dataDose1}}</p>
+                <p class="card-text">Dose 2: {{user.dose2}}</p>
+                <p class="card-text">Data dose 2: {{user.dataDose2}}</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="botoes">
+            <div class="content"></div>
+                <a href="/user/editar/{{user._id}}" id="botao02" class="btn btn-primary">Editar</a>
+                <form action="/user/logout/" method="post">
+                    <button type="submit" id="botao03" class="btn btn-danger">Sair</button>
+                </form>
+         </div>
+    </div> 
+</div>
+</div>

@@ -1,0 +1,11 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/2.png);
+    background-size: 100%;
+    background-color:rgba(233, 230, 227, 0.829);
+}

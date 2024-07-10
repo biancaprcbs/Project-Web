@@ -1,0 +1,94 @@
+<h2>Editar:</h2>
+<hr>
+
+<div class="card">
+    <div class="card-body">
+        <form action="/admin/deletar" method="post">
+            <input type="hidden" name="id" value="{{user._id}}">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-danger">Deletar cadastro</button>
+            </div>
+        </form>
+        <form action="/admin/editar" method="post">
+            <input type="hidden" name="id" value="{{user._id}}">
+
+            <label for="nomeCompleto">Nome completo:</label>
+            <input type="text" name="nomeCompleto" id="nomeCompleto" disabled="true" value="{{user.nomeCompleto}}"
+                class="form-control">
+            <br>
+            <label for="sexo">Sexo:</label>
+            <input type="text" name="sexo" id="sexo" disabled="true" value="{{user.sexo}}" class="form-control">
+            <br>
+            <label for="cartaoDoSus">Cartão do SUS:</label>
+            <input type="text" name="cartaoDoSus" id="cartaoDoSus" disabled="true" value="{{user.cartaoDoSus}}"
+                class="form-control">
+            <br>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" id="cpf" disabled="true" value="{{user.cpf}}" class="form-control">
+            <br>
+            <label for="logradouro">Endereço:</label>
+            <input type="text" name="logradouro" id="logradouro" disabled="true" value="{{user.logradouro}}"
+                class="form-control">
+            <br>
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" disabled="true" value="{{user.bairro}}" class="form-control">
+            <br>
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" id="numero" disabled="true" value="{{user.numero}}" class="form-control">
+            <br>
+            <label for="complemento">Complemento:</label>
+            <input type="text" name="complemento" id="complemento" disabled="true" value="{{user.complemento}}"
+                class="form-control">
+            <br>
+            <label for="dataNascimento">Data de nascimento:</label>
+            <input type="date" name="dataNascimento" id="dataNascimento" disabled="true" value="{{user.dataNascimento}}"
+                class="form-control">
+            <br>
+            <label for="celular">Telefone Celular:</label>
+            <input type="tel" name="celular" id="celular" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" disabled="true"
+                value="{{user.celular}}" class="form-control">
+            <br>
+            <label for="cor">Cor/Raça:</label>
+            <input type="text" name="cor" id="cor" disabled="true" value="{{user.cor}}" class="form-control">
+            <br>
+            <label for="profissao">Profissão:</label>
+            <input type="text" name="profissao" id="profissao" disabled="true" value="{{user.profissao}}"
+                class="form-control">
+            <br>
+            <label for="doenca">Doenças:</label>
+            <input type="text" name="doenca" id="doenca" disabled="true" value="{{user.doenca}}" class="form-control">
+            <br>
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email" disabled="true" value="{{user.email}}" class="form-control">
+            <br>
+            <label for="tipoVacina">Vacina aplicada:</label>
+            <select id="tipoVacina" name="tipoVacina" class="form-control">
+                <option value="Não aplicada">Não aplicada</option>
+                <option value="CoranaVac">CoronaVac</option>
+                <option value="AstraZeneca">AstraZeneca</option>
+            </select>
+            <br>
+            <label for="dose1">Dose aplicada:</label>
+            <select id="dose1" name="dose1" class="form-control">
+                <option value="Não aplicada">Não aplicada</option>
+                <option value="Aplicada">Dose 1</option>
+            </select>
+            <br>
+            <label for="dose2">Dose aplicada:</label>
+            <select id="dose2" name="dose2" class="form-control">
+                <option value="Não aplicada">Não aplicada</option>
+                <option value="Aplicada">Dose 2</option>
+            </select>
+            <br>
+            <a href="/admin/listar"><button type="button" class="btn btn-secondary">Voltar</button></a>
+            <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById('dataNascimento').value = new Date("{{user.dataNascimento}}").toISOString().split("T")[0];
+    document.getElementById('tipoVacina').value = "{{user.tipoVacina}}";
+    document.getElementById('dose1').value = "{{user.dose1}}";
+    document.getElementById('dose2').value = "{{user.dose2}}";
+</script>

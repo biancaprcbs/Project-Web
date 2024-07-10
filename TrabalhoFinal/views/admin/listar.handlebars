@@ -1,0 +1,26 @@
+<h2>Listar:</h2>
+<hr>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="../admin/home"><button type="button" class="btn btn-secondary">Voltar</button></a>
+</div>
+{{#each users}}
+    {{#if eAdmin }}
+    {{else}}
+        <div class="card mt-4">
+            <div class="card-body">
+                <p>Nome: {{nomeCompleto}}</p>
+                <p>Email: {{email}}</p>
+                <p class="card-text">{{grupo}}</p>
+                <p class="card-text">Vacina: {{tipoVacina}}</p>
+                <p class="card-text">Dose 1: {{dose1}}</p>
+                <p class="card-text">Data dose 1: {{dataDose1}}</p>
+                <p class="card-text">Dose 2: {{dose2}}</p>
+                <p class="card-text">Data dose 2: {{dataDose2}}</p>
+                <a href="/admin/editar/{{_id}}"><button type="button" class="btn btn-success">Editar</button></a>
+            </div>
+        </div>
+    {{/if}}
+{{else}}
+<h4 class="mt-2">Nenhum cadastro registrado!</h4>
+{{/each}}
